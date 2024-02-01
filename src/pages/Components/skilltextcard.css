@@ -1,0 +1,152 @@
+
+.handle {
+    /* width: 185px; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 3px black solid;
+    background-color: #ffd89a;
+    height: 30px;
+ }
+
+ .minimize-btn {
+    background-color: red;
+    border: 2px black solid;
+    width: 20px;
+    height: 20px;
+    margin: auto auto auto 5px;
+ }
+ 
+ .minimize-btn:hover {
+    cursor: pointer;
+ }
+
+ .program-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90%;
+ }
+ 
+ .program-line {
+    /* align-self: center; */
+    /* border: 1px black solid; */
+    /* max-width: 10%;
+    padding: 0 5px 0 5px; */
+ }
+  
+ .handle:hover {
+    cursor: move;
+ }
+ 
+ .text-handle {
+    /* width: 250px; */
+    display: flex;
+    flex-direction: row;
+    border: 3px black solid;
+    background-color: #ffd89a;
+    height: 30px;
+ }
+ 
+ .text-handle:hover {
+    cursor: move;
+ }
+
+ .skills-text-title {
+    font-size: 12px;
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+    /* padding: 0 20px 0 20px; */
+    text-align: center;
+    margin: auto 0 auto 0;
+ }
+ 
+ .box-shadow {
+    box-shadow: -7px 4px rgba(0, 0, 0, 0.425);
+ }
+ 
+ 
+ .skill-img-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* position: absolute; */
+ }
+ 
+ .skills-list-windows {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+ }
+
+ .skills-text-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 3px black solid;
+    border-bottom: 3px black solid;
+    border-right: 3px black solid;
+    background: url(../../images/daigonallines.png);
+    background-size: cover;
+    background-color: #4d1717;
+    text-align: center;
+    animation: flicker-text 10s infinite;
+ }
+ 
+ .skills-text-bubble-text {
+    font-size: 20px;
+    font-family: 'Dot Font', monospace;
+    color: #ffdca5;
+    text-shadow: 0 0 4px #ffd89a, 2px 2px 16px hsla(0,0%,100%,.5);
+    margin: 5px auto 0px auto;
+    padding: 0 20px 0 20px;
+    width: fit-content;
+    /* text-align: center; */
+ }
+
+ .skills-text-bubble {
+    border-radius: 0px;
+    /* transition: 0.5s; */
+    margin: 0px auto 0 auto;
+    width: fit-content;
+    max-width: 500px;   
+    margin: 10px auto;
+    height: fit-content;
+
+ }
+ 
+ .skills-text-bubble p {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Fake Receipt, monospace;
+    color: rgb(132, 255, 138);
+    
+    margin: 0 0 10px 0 ;
+    padding: 8px 20px 0 20px;
+ }
+
+
+span {
+    color: rgb(51, 165, 41);
+}
+
+@keyframes flicker-text {
+   0% {
+      filter:invert(0);
+   }
+   60% {
+      filter:invert(1)
+   }
+   /* 70% {
+      filter:invert(0);
+   }
+   80% {
+      filter:invert(1);
+   } */
+   100% {
+      filter:invert(0);
+   }
+}
