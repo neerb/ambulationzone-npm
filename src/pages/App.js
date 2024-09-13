@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import './App.css'
 
 import SkillCard from "./Components/SkillCard"
@@ -140,6 +140,14 @@ const App = () => {
     return tileArray;
   }
 
+  const onClickWindow = useCallback((e) => {
+    // $("#" + props.id).toggleClass("above");
+    // $(e.target).addClass("above");
+    // console.log(props.id);
+    console.log(e.target);
+    // e.preventDefault();
+  });
+
   return (
     <React.Fragment>
       <div className="about-coverpage-wrapper" style={{ visibility: (aboutEnabled ? "visible" : "hidden") }} onClick={null}>
@@ -263,15 +271,16 @@ const App = () => {
         <div className={"program-art-page " + (gridEnabled ? "" : "background-none")}>
           <div className={"page-filter " + (filterEnabled ? "" : "background-none")}></div>
           <div className="art-windows">
-            <SkillCard setId={"sinwave"} programText="sinwave.p5" artComp={<SinWave />} />
-            <WindowsCard id="marquee" className="window-item" programText="X:/marquee.css" artComp={<MarqueeCard sound={soundEnabled} />} />
+            <SkillCard id="sinwave" handleDrag={onClickWindow} setId={"sinwave"} programText="sinwave.p5" artComp={<SinWave />} />
+            <WindowsCard id="marquee" handleDrag={onClickWindow} className="window-item" programText="X:/marquee.css" artComp={<MarqueeCard sound={soundEnabled} />} />
             <ArtCard imageSrc={zipRipped} />
+
             <WindowsCard id='waveguy' soundUrl={null} sound={soundEnabled} programText="C:/wave-guy.p5" artComp={<WaveGuy />} />
             <ArtCard imageSrc={embryo} />
             <SkillCard programText="pong.p5" artComp={<PongGame />} />
 
             {/* THE FUCKING GUY! */}
-            <div className="senior-bumpis">
+            {/* <div className="senior-bumpis">
               <MacCard id='angelbumper' programText="Angelic Bumper" underbartext="Above him stood the seraphim." artComp={<MusicBumper />} />
               <WindowsCard id='muah' className="window-item" programText="X:/muah-XOXO" artComp={
                 <img className="art-image" src={lips} style={{ boxShadow: "none", background: "#000", width: "400px", borderRadius: "0" }} />
@@ -342,7 +351,7 @@ const App = () => {
             <SkillCard programText="hoolahoop.p5" artComp={<SphereAnimation />} />
             <ArtCard imageSrc={ordering} />
             <SkillCard programText="tangent-spaceinvaders.p5" artComp={<TriangleWaveAnimation />} />
-            <SkillCard programText="solar-system.p5" artComp={<SolarSystem3D />} />
+            <SkillCard programText="solar-system.p5" artComp={<SolarSystem3D />} /> */}
           </div>
         </div>
       </body>
